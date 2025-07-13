@@ -1,0 +1,66 @@
+{
+  "name": "Elle API Collection",
+  "version": "v2.0.0",
+  "description": "Beautiful and powerful API collection with Elle UI - Modern, fast, and developer-friendly.",
+  "bannerImage": "/src/banner.png",
+  "logo": "/src/logo.png",
+  "header": {
+    "status": "🚀 Online"
+  },
+  "apiSettings": {
+    "creator": "Elle UI",
+    "apikey": ["elle-api-key"],
+    "rateLimit": "1000 requests/hour"
+  },
+  "social": {
+    "github": "https://github.com/elle-ui",
+    "discord": "https://discord.gg/elle-ui",
+    "twitter": "https://twitter.com/elle_ui"
+  },
+  "categories": [
+    {
+      "name": "AI & Machine Learning",
+      "icon": "fas fa-brain",
+      "color": "#8B5CF6",
+      "description": "Powerful AI endpoints for text, image, and data processing",
+      "items": [
+        {
+          "name": "GPT Chat",
+          "desc": "Advanced conversational AI with context awareness and multi-turn dialogue support",
+          "path": "/ai/chat?message=",
+          "method": "GET",
+          "status": "ready",
+          "params": {
+            "message": "Your message to the AI assistant",
+            "model": "AI model to use (gpt-4, gpt-3.5-turbo)",
+            "temperature": "Response creativity (0.0-1.0)"
+          }
+        },
+        {
+          "name": "Image Generator",
+          "desc": "Create stunning AI-generated images from text descriptions with various styles",
+          "path": "/ai/image-gen?prompt=&style=&size=",
+          "method": "POST",
+          "status": "ready",
+          "params": {
+            "prompt": "Detailed description of the image you want to generate",
+            "style": "Art style (realistic, anime, abstract, oil-painting)",
+            "size": "Image dimensions (512x512, 1024x1024, 1920x1080)",
+            "quality": "Image quality (standard, hd)"
+          }
+        },
+        {
+          "name": "Text Analyzer",
+          "desc": "Analyze sentiment, extract keywords, and get insights from any text",
+          "path": "/ai/analyze?text=",
+          "method": "GET",
+          "status": "ready",
+          "params": {
+            "text": "Text content to analyze",
+            "features": "Analysis features (sentiment, keywords, entities, summary)"
+          }
+        }
+      ]
+    }
+  ]
+}
