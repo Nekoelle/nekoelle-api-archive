@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elle API - Beautiful and powerful API documentation interface with modern design and intuitive user experience.">
+    <meta name="keywords" content="API, Documentation, REST API, Elle UI, Developer Tools, API Testing">
+    <meta name="author" content="Elle UI">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Elle API - Modern API Documentation">
+    <meta property="og:description" content="Beautiful and powerful API collection with Elle UI - Modern, fast, and developer-friendly.">
+    <meta property="og:image" content="/src/banner.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elle API - Modern API Documentation">
+    <meta name="twitter:description" content="Beautiful and powerful API collection with Elle UI - Modern, fast, and developer-friendly.">
+    <meta name="twitter:image" content="/src/banner.png">
+    
+    <link rel="icon" href="/src/favicon.ico" type="image/x-icon">
+    <title id="pageTitle">Elle API</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="dark-mode">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-circle">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="loading-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+            <h3>Loading Elle API</h3>
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="brand-text">
+                    <span id="brandName">Elle API</span>
+                    <span id="brandVersion" class="version-badge">v2.0</span>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Search endpoints..." class="search-input">
+                        <button id="clearSearch" class="clear-search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <button id="themeToggle" class="theme-toggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="nav-links">
+                    <a href="#" class="nav-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle" class="hero-title">
+                    <span class="gradient-text">Elle API</span>
+                    <span class="hero-subtitle">Collection</span>
+                </h1>
+                <p id="heroDescription" class="hero-description">
+                    Beautiful and powerful API collection with Elle UI - Modern, fast, and developer-friendly.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalEndpoints">0</span>
+                        <span class="stat-label">Endpoints</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalCategories">0</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="document.getElementById('categoriesSection').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-rocket"></i>
+                        Explore APIs
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-book"></i>
+                        Documentation
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="api-preview">
+                    <div class="preview-header">
+                        <div class="preview-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="preview-title">API Response</span>
+                    </div>
+                    <div class="preview-content">
+                        <div class="code-line">
+                            <span class="code-key">"status"</span>: <span class="code-value">"success"</span>,
+                        </div>
+                        <div class="code-line">
+                            <span class="code-key">"data"</span>: {
+                        </div>
+                        <div class="code-line indent">
+                            <span class="code-key">"message"</span>: <span class="code-value">"Hello from Elle API!"</span>
+                        </div>
+                        <div class="code-line">}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categoriesSection" class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">API Categories</h2>
+                <p class="section-description">Explore our comprehensive collection of API endpoints</p>
+            </div>
+            
+            <!-- Category Slider -->
+            <div class="category-slider-container">
+                <button class="slider-nav slider-prev" id="sliderPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="category-slider" id="categorySlider">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+                <button class="slider-nav slider-next" id="sliderNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- API Endpoints -->
+            <div class="endpoints-container" id="endpointsContainer">
+                <!-- Endpoints will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- API Modal -->
+    <div id="apiModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-section">
+                    <h3 id="modalTitle" class="modal-title">API Endpoint</h3>
+                    <span id="modalMethod" class="method-badge">GET</span>
+                </div>
+                <button id="closeModal" class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="endpoint-info">
+                    <p id="modalDescription" class="endpoint-description"></p>
+                    
+                    <div class="endpoint-url">
+                        <label>Endpoint URL</label>
+                        <div class="url-container">
+                            <code id="endpointUrl" class="endpoint-code"></code>
+                            <button id="copyUrl" class="copy-btn" title="Copy URL">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="parametersSection" class="parameters-section">
+                    <h4>Parameters</h4>
+                    <div id="parametersContainer" class="parameters-container">
+                        <!-- Parameters will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="test-section">
+                    <button id="testEndpoint" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        Test Endpoint
+                    </button>
+                </div>
+                
+                <div id="responseSection" class="response-section" style="display: none;">
+                    <div class="response-header">
+                        <h4>Response</h4>
+                        <button id="copyResponse" class="copy-btn" title="Copy Response">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="response-container">
+                        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                            <div class="spinner"></div>
+                            <span>Testing endpoint...</span>
+                        </div>
+                        <pre id="responseContent" class="response-content"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="brand-logo">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <span>Elle API</span>
+                    </div>
+                    <p>Beautiful and powerful API documentation interface.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Examples</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p id="footerCopyright">&copy; 2024 Elle API. All rights reserved.</p>
+                <div class="theme-toggle-footer">
+                    <span>Theme:</span>
+                    <button id="themeToggleFooter" class="theme-toggle-btn">
+                        <span class="theme-option active" data-theme="dark">
+                            <i class="fas fa-moon"></i> Dark
+                        </span>
+                        <span class="theme-option" data-theme="light">
+                            <i class="fas fa-sun"></i> Light
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
